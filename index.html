@@ -20,7 +20,7 @@
     <meta name="twitter:image" content="https://raw.githubusercontent.com/ff813ff/llw/refs/heads/main/po/L0vfCRts.png">
     <meta name="twitter:url" content="https://ff813ff.github.io/llw/">
     
-    <!-- 页面标题 - 只保留这一个 -->
+    <!-- 页面标题 -->
     <title>X Global Services Hub</title>
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -44,18 +44,19 @@
             color: #212529;
             line-height: 1.5;
             min-height: 100vh;
+            font-size: 16px; /* 设置基础字体大小 */
         }
         
         .container {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 15px;
         }
         
-        /* 头部 */
+        /* 头部 - 增加上下内边距 */
         header {
-            background: rgba(255, 255, 255, 0.85);
-            padding: 12px 0; /* 减小内边距 */
+            background: rgba(255, 255, 255, 0.95);
+            padding: 12px 0; /* 增加上下内边距 */
             position: sticky;
             top: 0;
             z-index: 100;
@@ -66,30 +67,40 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            position: relative;
         }
         
         .logo {
             display: flex;
             align-items: center;
-            gap: 10px; /* 减小间隙 */
+            gap: 8px;
             font-weight: 700;
-            font-size: 1.2rem; /* 减小字体大小 */
+            font-size: 1.3rem; /* 增大字体大小 */
             color: #3a86ff;
         }
         
+        /* 修改语言选择器为垂直排列并固定在右上角 - 调整位置更靠上 */
         .language-selector {
+            position: absolute;
+            top: 0px; /* 调整位置，更靠近顶部 */
+            right: 0;
             display: flex;
-            gap: 8px;
+            flex-direction: column;
+            gap: 3px; /* 减小间隙 */
+            z-index: 101;
         }
         
         .lang-btn {
-            background: transparent;
+            background: white;
             border: 1px solid rgba(0,0,0,0.1);
-            padding: 6px 12px; /* 减小内边距 */
-            border-radius: 20px;
+            padding: 5px 12px; /* 调整内边距 */
+            border-radius: 15px;
             cursor: pointer;
-            font-size: 0.9rem; /* 减小字体大小 */
+            font-size: 0.85rem; /* 略微减小字体大小 */
             transition: all 0.3s ease;
+            width: 80px; /* 减小宽度 */
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
         
         .lang-btn:hover {
@@ -104,128 +115,104 @@
         
         /* 主要内容 */
         main {
-            padding: 20px 0 40px; /* 减小内边距 */
+            padding: 10px 0 25px; /* 增加内边距 */
         }
-        
-        /* 欢迎部分 - 缩小尺寸 */
-        .welcome-section {
-            text-align: center;
-            margin-bottom: 40px; /* 减小外边距 */
-            padding: 20px; /* 减小内边距 */
-            background: rgba(255, 255, 255, 0.85);
-            border-radius: 10px; /* 减小圆角 */
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08); /* 减小阴影 */
-            max-width: 800px; /* 限制最大宽度 */
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .welcome-title {
-            font-size: 1.5rem; /* 减小字体大小 */
-            color: #212529;
-            margin-bottom: 8px; /* 减小间距 */
-            text-shadow: 
-                0 0 5px rgba(255, 255, 255, 0.8),
-                0 0 3px rgba(255, 255, 255, 0.6);
-        }
-        
-        .welcome-subtitle {
-            color: #6c757d;
-            max-width: 600px; /* 减小最大宽度 */
-            margin: 0 auto 10px; /* 减小间距 */
-            font-size: 0.95rem; /* 减小字体大小 */
-        }
-        
-        /* 移除了 .language-info 样式 */
         
         /* 业务服务部分 */
         .services-section {
-            margin-bottom: 40px; /* 减小外边距 */
+            margin-bottom: 20px;
         }
         
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 减小最小宽度 */
-            gap: 25px; /* 减小间距 */
+            grid-template-columns: 1fr;
+            gap: 15px; /* 增加间隙 */
         }
         
-        /* 业务卡片 */
+        /* 业务卡片 - 增大尺寸和字体 */
         .service-card {
             background: rgba(255, 255, 255, 0.85);
-            border-radius: 10px; /* 减小圆角 */
-            padding: 25px; /* 减小内边距 */
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            border-radius: 10px; /* 增加圆角 */
+            padding: 16px 18px; /* 增加内边距 */
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08); /* 增加阴影 */
             cursor: pointer;
             transition: all 0.3s ease;
-            height: 100%;
-            min-height: 260px; /* 减小最小高度 */
             display: flex;
             flex-direction: column;
-            border-left: 5px solid #3a86ff; /* 减小边框 */
+            border-left: 5px solid #3a86ff; /* 增加边框宽度 */
             text-decoration: none;
             color: inherit;
+            min-height: 160px; /* 增加最小高度以适应更多内容 */
+            height: auto;
         }
         
         .service-card:hover {
-            transform: translateY(-3px); /* 减小上移距离 */
-            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+            transform: translateY(-3px); /* 增加上移距离 */
+            box-shadow: 0 6px 20px rgba(0,0,0,0.12);
         }
         
-        /* 卡片头部 */
+        /* 卡片头部 - 增加尺寸 */
         .card-header {
             display: flex;
             align-items: center;
-            gap: 12px; /* 减小间隙 */
-            margin-bottom: 15px; /* 减小间距 */
+            gap: 12px; /* 增加间隙 */
+            margin-bottom: 10px; /* 增加间距 */
         }
         
         .service-icon {
-            font-size: 2rem; /* 减小图标大小 */
-            width: 60px; /* 减小尺寸 */
-            height: 60px; /* 减小尺寸 */
+            font-size: 1.8rem; /* 增大图标大小 */
+            width: 50px; /* 增加尺寸 */
+            height: 50px; /* 增加尺寸 */
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
+            flex-shrink: 0;
         }
         
         .service-title {
-            font-size: 1.3rem; /* 减小字体大小 */
+            font-size: 1.25rem; /* 增大字体大小 */
             color: #212529;
             font-weight: 700;
             text-shadow: 
-                0 0 3px rgba(255, 255, 255, 0.7),
-                0 0 2px rgba(255, 255, 255, 0.5);
+                0 0 2px rgba(255, 255, 255, 0.7),
+                0 0 1px rgba(255, 255, 255, 0.5);
         }
         
-        /* 卡片内容 */
+        /* 卡片内容 - 增大字体 */
         .card-content {
             flex-grow: 1;
-            margin-bottom: 20px; /* 减小间距 */
+            margin-bottom: 12px; /* 增加间距 */
         }
         
         .service-desc {
             color: #6c757d;
-            line-height: 1.5;
-            margin-bottom: 15px; /* 减小间距 */
-            font-size: 0.9rem; /* 减小字体大小 */
+            line-height: 1.5; /* 增加行高 */
+            margin-bottom: 10px; /* 增加间距 */
+            font-size: 0.95rem; /* 增大字体大小 */
+            display: -webkit-box;
+            -webkit-line-clamp: 3; /* 改为3行 */
+            -webkit-box-orient: vertical;
+            overflow: hidden;
         }
         
         .features {
             display: flex;
             flex-wrap: wrap;
-            gap: 6px; /* 减小间隙 */
+            gap: 6px; /* 增加间隙 */
+            margin-top: 5px; /* 增加上边距 */
         }
         
         .feature-tag {
             background: rgba(0,0,0,0.04);
-            padding: 5px 10px; /* 减小内边距 */
-            border-radius: 15px;
-            font-size: 0.8rem; /* 减小字体大小 */
+            padding: 4px 8px; /* 增加内边距 */
+            border-radius: 12px; /* 增加圆角 */
+            font-size: 0.8rem; /* 稍微减小字体大小以容纳更多标签 */
             color: #212529;
+            white-space: nowrap;
         }
         
-        /* 卡片底部 */
+        /* 卡片底部 - 增大尺寸 */
         .card-footer {
             display: flex;
             align-items: center;
@@ -238,93 +225,93 @@
             font-weight: 700;
             display: flex;
             align-items: center;
-            gap: 6px; /* 减小间隙 */
-            font-size: 0.9rem; /* 减小字体大小 */
+            gap: 6px; /* 增加间隙 */
+            font-size: 0.95rem; /* 增大字体大小 */
         }
         
         .popular-badge {
             background: #ffbe0b;
             color: #333;
-            padding: 3px 10px; /* 减小内边距 */
-            border-radius: 15px;
-            font-size: 0.8rem; /* 减小字体大小 */
+            padding: 4px 8px; /* 增加内边距 */
+            border-radius: 12px; /* 增加圆角 */
+            font-size: 0.85rem; /* 增大字体大小 */
             font-weight: 600;
             display: flex;
             align-items: center;
-            gap: 4px; /* 减小间隙 */
+            gap: 4px; /* 增加间隙 */
         }
         
-        /* 底部 */
+        /* 底部 - 增大尺寸 */
         footer {
             background: rgba(33, 37, 41, 0.85);
             color: white;
-            padding: 40px 0 20px; /* 减小内边距 */
-            margin-top: 40px; /* 减小上边距 */
+            padding: 25px 0 15px; /* 增加内边距 */
+            margin-top: 25px; /* 增加上边距 */
         }
         
         .footer-content {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
-            gap: 30px; /* 减小间隙 */
-            margin-bottom: 25px; /* 减小间距 */
+            gap: 25px; /* 增加间隙 */
+            margin-bottom: 20px; /* 增加间距 */
         }
         
         .footer-about {
             flex: 1;
-            min-width: 280px; /* 减小最小宽度 */
+            min-width: 220px; /* 增加最小宽度 */
         }
         
         .footer-logo {
-            font-size: 1.3rem; /* 减小字体大小 */
+            font-size: 1.25rem; /* 增大字体大小 */
             font-weight: 700;
-            margin-bottom: 12px; /* 减小间距 */
+            margin-bottom: 10px; /* 增加间距 */
             display: flex;
             align-items: center;
-            gap: 8px; /* 减小间隙 */
+            gap: 8px; /* 增加间隙 */
         }
         
         .footer-desc {
             color: #adb5bd;
-            line-height: 1.6;
-            font-size: 0.9rem; /* 减小字体大小 */
+            line-height: 1.6; /* 增加行高 */
+            font-size: 0.95rem; /* 增大字体大小 */
         }
         
         .tech-support {
             flex: 1;
-            min-width: 280px; /* 减小最小宽度 */
+            min-width: 220px; /* 增加最小宽度 */
             background: rgba(255,255,255,0.1);
-            border-radius: 10px; /* 减小圆角 */
-            padding: 25px; /* 减小内边距 */
+            border-radius: 8px; /* 增加圆角 */
+            padding: 20px; /* 增加内边距 */
         }
         
         .tech-title {
-            font-size: 1.3rem; /* 减小字体大小 */
-            margin-bottom: 12px; /* 减小间距 */
+            font-size: 1.25rem; /* 增大字体大小 */
+            margin-bottom: 12px; /* 增加间距 */
             color: #3a86ff;
         }
         
         .tech-desc {
             color: #adb5bd;
-            margin-bottom: 15px; /* 减小间距 */
-            line-height: 1.6;
-            font-size: 0.9rem; /* 减小字体大小 */
+            margin-bottom: 15px; /* 增加间距 */
+            line-height: 1.6; /* 增加行高 */
+            font-size: 0.95rem; /* 增大字体大小 */
         }
         
         .contact-btn {
             background: transparent;
             color: white;
             border: 1px solid rgba(255,255,255,0.2);
-            padding: 10px 20px; /* 减小内边距 */
-            border-radius: 25px;
+            padding: 8px 16px; /* 增加内边距 */
+            border-radius: 20px; /* 增加圆角 */
             cursor: pointer;
             font-weight: 600;
             transition: all 0.3s ease;
             display: inline-flex;
             align-items: center;
-            gap: 8px; /* 减小间隙 */
+            gap: 6px; /* 增加间隙 */
             text-decoration: none;
-            font-size: 0.9rem; /* 减小字体大小 */
+            font-size: 0.95rem; /* 增大字体大小 */
         }
         
         .contact-btn:hover {
@@ -333,51 +320,187 @@
         
         .copyright {
             text-align: center;
-            padding-top: 20px; /* 减小内边距 */
+            padding-top: 15px; /* 增加内边距 */
             border-top: 1px solid rgba(255,255,255,0.1);
             color: #adb5bd;
-            font-size: 0.85rem; /* 减小字体大小 */
+            font-size: 0.9rem; /* 增大字体大小 */
         }
         
-        /* 响应式设计 */
-        @media (max-width: 768px) {
-            .header-content {
-                flex-direction: column;
-                gap: 10px; /* 减小间隙 */
+        /* 针对430x785尺寸的优化 */
+        @media (max-width: 480px) {
+            body {
+                font-size: 17px; /* 在手机上进一步增加基础字体大小 */
+            }
+            
+            .container {
+                padding: 0 12px;
+            }
+            
+            header {
+                padding: 14px 0; /* 增加上下内边距 */
             }
             
             .logo {
-                font-size: 1.1rem; /* 减小字体大小 */
+                font-size: 1.4rem; /* 增大字体大小 */
             }
             
-            .welcome-section {
-                padding: 15px; /* 减小内边距 */
-                margin-bottom: 30px; /* 减小外边距 */
+            .language-selector {
+                top: 0px; /* 调整位置 */
+                gap: 2px; /* 进一步减小间隙 */
             }
             
-            .welcome-title {
-                font-size: 1.3rem; /* 减小字体大小 */
+            .lang-btn {
+                width: 75px; /* 减小宽度 */
+                padding: 4px 10px; /* 减小内边距 */
+                font-size: 0.8rem; /* 减小字体大小 */
             }
             
+            /* 业务卡片在手机上的优化 */
             .services-grid {
-                grid-template-columns: 1fr;
-                gap: 20px; /* 减小间隙 */
+                gap: 12px;
             }
             
             .service-card {
-                padding: 20px; /* 减小内边距 */
-                min-height: 240px; /* 减小最小高度 */
+                padding: 14px 16px;
+                min-height: 150px; /* 确保卡片高度合适 */
+                border-left-width: 4px;
+            }
+            
+            .card-header {
+                gap: 10px;
+                margin-bottom: 8px;
             }
             
             .service-icon {
-                width: 50px; /* 减小尺寸 */
-                height: 50px; /* 减小尺寸 */
-                font-size: 1.8rem; /* 减小图标大小 */
+                width: 48px;
+                height: 48px;
+                font-size: 1.7rem;
             }
             
+            .service-title {
+                font-size: 1.2rem;
+            }
+            
+            .service-desc {
+                font-size: 0.9rem;
+                line-height: 1.45;
+                margin-bottom: 8px;
+                -webkit-line-clamp: 3; /* 手机上也显示3行 */
+            }
+            
+            .features {
+                gap: 4px; /* 减小间隙以容纳更多标签 */
+                margin-top: 4px;
+            }
+            
+            .feature-tag {
+                font-size: 0.75rem; /* 减小字体大小以容纳更多标签 */
+                padding: 3px 6px;
+            }
+            
+            .service-action {
+                font-size: 0.9rem;
+                gap: 4px;
+            }
+            
+            .popular-badge {
+                font-size: 0.8rem;
+                padding: 3px 7px;
+            }
+            
+            /* 底部优化 */
             .footer-content {
                 flex-direction: column;
-                gap: 20px; /* 减小间隙 */
+                gap: 20px;
+            }
+            
+            .footer-logo {
+                font-size: 1.2rem;
+            }
+            
+            .footer-desc {
+                font-size: 0.9rem;
+            }
+            
+            .tech-support {
+                padding: 18px;
+            }
+            
+            .tech-title {
+                font-size: 1.2rem;
+            }
+            
+            .tech-desc {
+                font-size: 0.9rem;
+            }
+            
+            .contact-btn {
+                font-size: 0.9rem;
+            }
+            
+            .copyright {
+                font-size: 0.85rem;
+            }
+        }
+        
+        /* 平板和更大屏幕上的优化 */
+        @media (min-width: 481px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 18px;
+            }
+            
+            .service-card {
+                min-height: 165px; /* 增加高度以容纳更多内容 */
+            }
+        }
+        
+        /* 桌面上的优化 */
+        @media (min-width: 769px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+            
+            .service-card {
+                min-height: 170px;
+            }
+        }
+        
+        /* 大屏幕上的优化 */
+        @media (min-width: 1024px) {
+            .services-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+        
+        /* 针对430x785像素屏幕的特殊优化 */
+        @media (max-height: 800px) and (max-width: 480px) {
+            .service-card {
+                min-height: 145px; /* 稍微减小高度以适应小屏幕 */
+                padding: 12px 14px;
+            }
+            
+            .service-desc {
+                -webkit-line-clamp: 3; /* 确保显示三行 */
+            }
+            
+            /* 确保在430x785屏幕上能显示3个卡片 */
+            .services-section {
+                margin-bottom: 15px;
+            }
+            
+            main {
+                padding: 8px 0 20px;
+            }
+            
+            .features {
+                gap: 3px; /* 进一步减小间隙 */
+            }
+            
+            .feature-tag {
+                font-size: 0.7rem; /* 进一步减小字体大小 */
+                padding: 2px 5px;
             }
         }
     </style>
@@ -392,7 +515,7 @@
                     <span id="logo-text">Global Services Hub</span>
                 </div>
                 
-                <!-- 只保留中英文按钮 -->
+                <!-- 修改为上下排序的语言选择器 -->
                 <div class="language-selector">
                     <button class="lang-btn active" data-lang="en">English</button>
                     <button class="lang-btn" data-lang="zh">中文</button>
@@ -404,16 +527,7 @@
     <!-- 主要内容 -->
     <main>
         <div class="container">
-            <!-- 欢迎部分 - 移除了语言检测提示 -->
-            <section class="welcome-section">
-                <h1 class="welcome-title" id="welcome-title">Global Services Hub</h1>
-                <p class="welcome-subtitle" id="welcome-subtitle">
-                    Premium digital services: online cinema, local dating, global shopping, advertising solutions.
-                </p>
-                <!-- 移除了语言检测提示部分 -->
-            </section>
-            
-            <!-- 业务服务部分 -->
+            <!-- 直接显示业务服务部分 -->
             <section class="services-section">
                 <div class="services-grid">
                     <!-- 在线影院 -->
@@ -434,6 +548,7 @@
                                 <span class="feature-tag" id="feature1-1">HD & 4K Quality</span>
                                 <span class="feature-tag" id="feature1-2">Global Content</span>
                                 <span class="feature-tag" id="feature1-3">Multi-Device</span>
+                                <span class="feature-tag" id="feature1-4">Offline Viewing</span>
                             </div>
                         </div>
                         
@@ -467,6 +582,7 @@
                                 <span class="feature-tag" id="feature3-1">Safe & Verified</span>
                                 <span class="feature-tag" id="feature3-2">Smart Matching</span>
                                 <span class="feature-tag" id="feature3-3">Video Profiles</span>
+                                <span class="feature-tag" id="feature3-4">Group Events</span>
                             </div>
                         </div>
                         
@@ -500,6 +616,7 @@
                                 <span class="feature-tag" id="feature2-1">Free UPS Shipping</span>
                                 <span class="feature-tag" id="feature2-2">Global Brands</span>
                                 <span class="feature-tag" id="feature2-3">Secure Payment</span>
+                                <span class="feature-tag" id="feature2-4">Easy Returns</span>
                             </div>
                         </div>
                         
@@ -529,6 +646,7 @@
                                 <span class="feature-tag" id="feature4-1">Global Audience</span>
                                 <span class="feature-tag" id="feature4-2">Targeted Ads</span>
                                 <span class="feature-tag" id="feature4-3">Detailed Analytics</span>
+                                <span class="feature-tag" id="feature4-4">ROI Tracking</span>
                             </div>
                         </div>
                         
@@ -582,15 +700,13 @@
         const translations = {
             en: {
                 logoText: "Global Services Hub",
-                welcomeTitle: "Global Services Hub",
-                welcomeSubtitle: "Premium digital services: online cinema, local dating, global shopping, advertising solutions.",
-                
                 // 在线影院
                 service1Title: "Online Cinema",
                 service1Desc: "Stream thousands of movies and TV shows in HD and 4K quality. Latest releases, exclusive originals, and classic films from around the world.",
                 feature1_1: "HD & 4K Quality",
                 feature1_2: "Global Content",
                 feature1_3: "Multi-Device",
+                feature1_4: "Offline Viewing", // 新增特点
                 service1Action: "Start Watching Now",
                 popular1: "Most Popular",
                 
@@ -600,6 +716,7 @@
                 feature2_1: "Free UPS Shipping",
                 feature2_2: "Global Brands",
                 feature2_3: "Secure Payment",
+                feature2_4: "Easy Returns", // 新增特点
                 service2Action: "Start Shopping",
                 
                 // 同城约会
@@ -608,6 +725,7 @@
                 feature3_1: "Safe & Verified",
                 feature3_2: "Smart Matching",
                 feature3_3: "Video Profiles",
+                feature3_4: "Group Events", // 新增特点
                 service3Action: "Find Matches",
                 popular3: "Most Popular",
                 
@@ -617,6 +735,7 @@
                 feature4_1: "Global Audience",
                 feature4_2: "Targeted Ads",
                 feature4_3: "Detailed Analytics",
+                feature4_4: "ROI Tracking", // 新增特点
                 service4Action: "Advertise With Us",
                 
                 // 底部
@@ -628,15 +747,13 @@
             },
             zh: {
                 logoText: "全球服务枢纽",
-                welcomeTitle: "全球服务枢纽",
-                welcomeSubtitle: "优质数字服务：在线影院、同城约会、全球购物、广告解决方案。",
-                
                 // 在线影院
                 service1Title: "在线影院",
                 service1Desc: "流媒体播放数千部高清和4K质量的电影和电视节目。最新发行、独家原创和来自世界各地的经典电影。",
                 feature1_1: "高清与4K画质",
                 feature1_2: "全球内容",
                 feature1_3: "多设备支持",
+                feature1_4: "离线观看", // 新增特点
                 service1Action: "立即开始观看",
                 popular1: "最受欢迎",
                 
@@ -646,6 +763,7 @@
                 feature2_1: "免费UPS送货",
                 feature2_2: "全球品牌",
                 feature2_3: "安全支付",
+                feature2_4: "轻松退货", // 新增特点
                 service2Action: "开始购物",
                 
                 // 同城约会
@@ -654,6 +772,7 @@
                 feature3_1: "安全可靠",
                 feature3_2: "智能匹配",
                 feature3_3: "视频资料",
+                feature3_4: "团体活动", // 新增特点
                 service3Action: "寻找匹配",
                 popular3: "最受欢迎",
                 
@@ -663,6 +782,7 @@
                 feature4_1: "全球受众",
                 feature4_2: "定向广告",
                 feature4_3: "详细分析",
+                feature4_4: "投资回报跟踪", // 新增特点
                 service4Action: "与我们合作",
                 
                 // 底部
@@ -672,20 +792,19 @@
                 contactBtn: "探索合作机会",
                 copyright: "© 2023 全球服务枢纽 版权所有"
             }
-            // 移除了西班牙语和阿拉伯语翻译
         };
 
         // 检测语言 - 只支持中英文
         function detectLanguage() {
             const browserLang = navigator.language.split('-')[0];
-            const supportedLangs = ['en', 'zh']; // 只保留中英文
+            const supportedLangs = ['en', 'zh'];
             
             if (supportedLangs.includes(browserLang)) {
                 return browserLang;
             }
             
             const savedLang = localStorage.getItem('preferredLanguage');
-            return savedLang || 'en'; // 默认英语
+            return savedLang || 'en';
         }
 
         // 应用语言
@@ -694,8 +813,6 @@
             
             // 更新所有文本内容
             document.getElementById('logo-text').textContent = langData.logoText;
-            document.getElementById('welcome-title').textContent = langData.welcomeTitle;
-            document.getElementById('welcome-subtitle').textContent = langData.welcomeSubtitle;
             
             // 更新在线影院内容
             document.getElementById('service1-title').textContent = langData.service1Title;
@@ -703,6 +820,7 @@
             document.getElementById('feature1-1').textContent = langData.feature1_1;
             document.getElementById('feature1-2').textContent = langData.feature1_2;
             document.getElementById('feature1-3').textContent = langData.feature1_3;
+            document.getElementById('feature1-4').textContent = langData.feature1_4; // 新增
             document.getElementById('service1-action').textContent = langData.service1Action;
             document.getElementById('popular1').textContent = langData.popular1;
             
@@ -712,6 +830,7 @@
             document.getElementById('feature2-1').textContent = langData.feature2_1;
             document.getElementById('feature2-2').textContent = langData.feature2_2;
             document.getElementById('feature2-3').textContent = langData.feature2_3;
+            document.getElementById('feature2-4').textContent = langData.feature2_4; // 新增
             document.getElementById('service2-action').textContent = langData.service2Action;
             
             // 更新同城约会内容
@@ -720,6 +839,7 @@
             document.getElementById('feature3-1').textContent = langData.feature3_1;
             document.getElementById('feature3-2').textContent = langData.feature3_2;
             document.getElementById('feature3-3').textContent = langData.feature3_3;
+            document.getElementById('feature3-4').textContent = langData.feature3_4; // 新增
             document.getElementById('service3-action').textContent = langData.service3Action;
             document.getElementById('popular3').textContent = langData.popular3;
             
@@ -729,6 +849,7 @@
             document.getElementById('feature4-1').textContent = langData.feature4_1;
             document.getElementById('feature4-2').textContent = langData.feature4_2;
             document.getElementById('feature4-3').textContent = langData.feature4_3;
+            document.getElementById('feature4-4').textContent = langData.feature4_4; // 新增
             document.getElementById('service4-action').textContent = langData.service4Action;
             
             // 更新底部内容
@@ -763,11 +884,7 @@
                     applyLanguage(lang);
                 });
             });
-            
-            // 由于业务卡片已经改为链接，不再需要点击事件处理
-            // 由于合作按钮已经改为链接，不再需要点击事件处理
         });
     </script>
 </body>
-
 </html>
